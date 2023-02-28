@@ -9,18 +9,39 @@
     --color2: rgb(255 255 255);
     --color3: #007f54;
 
+    --color4: #091e4221;
+
     --heightHeader: 31.200px;
     --paddingHeaderHeight: 4px;
     --paddingHeaderWidth: 6px;
 
+    --fontSize1: 20px;
+    --lineheight1: 24px;
 
     --heightAndWidthIconTrello: 60px;
     --fontSizeIconTrello: 35px;
     --borderRadiousIconTrello: 4px;
+
+    --heightOfhr: 1px;
+
+    --marginTopTemplates: 24px;
+}
+
+/** layout*/
+div.layout {
+    background-color: #007f54;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 31.200px 1fr;
+    grid-template-areas:
+        "header header"
+        "home-containter-nav main";
 }
 
 
 div.header {
+    grid-area: header;
     color: var(--color2);
     background-color: var(--color1);
     height: var(--heightHeader);
@@ -34,34 +55,69 @@ div.header-container {
 }
 
 div.home-containter-nav {
+    grid-area: home-containter-nav;
     background-color: aqua;
 }
 
-div.main-content {
-    background-color: aquamarine;
-}
+/* div.main-content { */
+/* background-color: aquamarine; */
+/* } */
 
 /****Main content*************/
 
-div.main-content-container{
-    margin:20px 16px 0px;
+div.main-content-container {
+    grid-area: main
+    margin: 20px 16px 0px;
 }
-div.trello-header-workspace-container{
+
+div.trello-header-workspace-container {
     display: flex;
-    
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+    color: var(--color3);
+    font-weight: 20px;
+
 }
 
 button.icon-trello-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
 
     height: var(--heightAndWidthIconTrello);
     width: var(--heightAndWidthIconTrello);
     background-color: var(--color3);
     border-radius: var(--borderRadiousIconTrello);
 }
-button.icon-trello-btn div.icon-word{
-    color:var(--color2);
+
+button.icon-trello-btn div.icon-word {
+    color: var(--color2);
     font-size: var(--fontSizeIconTrello);
+}
+
+div.private-trello {
+    display: flex;
+}
+
+hr {
+    background-color: var(--color4);
+    height: var(--heightOfhr);
+    margin: 16px 0;
+    width: 100%;
+}
+
+/*Most popular templates*/
+div.header-most-populate-templates-containter {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--fontSize1);
+    line-height: var(--lineheight1);
+}
+
+div.icon-and-most-popular-templates-flex {
+    display: flex;
+}
+
+div.options-for-templates {
+    margin-top: var(--marginTopTemplates);
 }
