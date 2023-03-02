@@ -2,14 +2,17 @@
     margin: 0;
     border: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
     --color1: rgb(2 106 167);
     --color2: rgb(255 255 255);
     --color3: #007f54;
-
     --color4: #091e4221;
+    --color5: #172b4d;
+    --color6: #d9bfdb;
+    --color7: #6b808c;
 
     --heightHeader: 31.200px;
     --paddingHeaderHeight: 4px;
@@ -25,18 +28,27 @@
     --heightOfhr: 1px;
 
     --marginTopTemplates: 24px;
+
+    /* templates */
+    --borderRadious-template: 3px;
+    --paddingTemplate: 3px 8px;
+    --padding: 8px;
+    --heightTemplate: 96px;
+    --lineHeightTempalte: 20px;
+    --paddingPopularTemplates: 12px 0px;
+    --marginPopularTemplates: 0 auto 24px auto;
 }
 
 /** layout*/
 div.layout {
-    background-color: #007f54;
+    background-color: var(--color2);
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 31.200px 1fr;
     grid-template-areas:
         "header header"
-        "home-containter-nav main";
+        "home-nav main";
 }
 
 
@@ -54,8 +66,8 @@ div.header-container {
     justify-content: start;
 }
 
-div.home-containter-nav {
-    grid-area: home-containter-nav;
+div.home-nav {
+    grid-area: home-nav;
     background-color: aqua;
 }
 
@@ -65,8 +77,8 @@ div.home-containter-nav {
 
 /****Main content*************/
 
-div.main-content-container {
-    grid-area: main
+div.main-content {
+    grid-area: main;
     margin: 20px 16px 0px;
 }
 
@@ -117,7 +129,61 @@ div.header-most-populate-templates-containter {
 div.icon-and-most-popular-templates-flex {
     display: flex;
 }
+div.most-popular-templates{
+    padding: var(--paddingPopularTemplates);
+    margin: var(--marginPopularTemplates);
+}
 
 div.options-for-templates {
     margin-top: var(--marginTopTemplates);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: var(--color2)
 }
+
+.project-managemnet-container {
+    background-color: hsla(0, 0%, 0%, 0.15);
+}
+
+.template {
+    border-radius: var(--borderRadious-template);
+    padding: var(--paddingTemplate);
+    color: var(--color5);
+    background-color: var(--color6);
+}
+
+div.container-template {
+    display: flex;
+    flex-direction: column;
+    height: var(--heightTemplate);
+    line-height: var(--lineHeightTempalte);
+    background-color: rgb(38, 27, 27);
+    cursor: pointer;
+}
+
+div.data-container {
+    padding: var(--padding);
+}
+
+a.browse-full-template{
+    color:var(--color7);
+    cursor: pointer;
+}
+/*nav aside*/
+div.boards-containter,
+div.templates-containter,
+div.home-containter,
+div.workspace-container,
+div.trello-workspace-container,
+div.highlights-containter,
+div.views-containter,
+div.members-containter,
+div.settings-containter {
+    display: flex;
+}
+/*Your boards*/
+div.your-boards-container{
+    display: flex;
+}
+
+/*Mobile-first*/
