@@ -6,13 +6,14 @@
 }
 
 :root {
-    --color1: rgb(2 106 167);
+    --color1: #026aa7;
     --color2: rgb(255 255 255);
     --color3: #007f54;
     --color4: #091e4221;
     --color5: #172b4d;
     --color6: #d9bfdb;
     --color7: #6b808c;
+    --color8: #0079bf;
 
     --heightHeader: 31.200px;
     --paddingHeaderHeight: 4px;
@@ -37,6 +38,15 @@
     --lineHeightTempalte: 20px;
     --paddingPopularTemplates: 12px 0px;
     --marginPopularTemplates: 0 auto 24px auto;
+
+
+    /*aside*/
+    --marginAside: 40px;
+    --paddingAside: 0px 16px;
+
+    /*icons*/
+    --lineHeightIcon: 20px;
+    --fontSizeIcon: 14px;
 }
 
 /** layout*/
@@ -48,7 +58,7 @@ div.layout {
     grid-template-rows: 31.200px 1fr;
     grid-template-areas:
         "header header"
-        "home-nav main";
+        "aside main";
 }
 
 
@@ -66,14 +76,20 @@ div.header-container {
     justify-content: start;
 }
 
-div.home-nav {
-    grid-area: home-nav;
-    background-color: aqua;
+div.aside {
+    grid-area: aside;
 }
 
-/* div.main-content { */
-/* background-color: aquamarine; */
-/* } */
+div.containter-aside {
+    margin-top: var(--marginAside);
+    padding: var(--paddingAside);
+}
+
+/*icons*/
+img.icon{
+    line-height: var(--lineHeightIcon);
+    font-size: var(--fontSizeIcon);
+}
 
 /****Main content*************/
 
@@ -129,7 +145,8 @@ div.header-most-populate-templates-containter {
 div.icon-and-most-popular-templates-flex {
     display: flex;
 }
-div.most-popular-templates{
+
+div.most-popular-templates {
     padding: var(--paddingPopularTemplates);
     margin: var(--marginPopularTemplates);
 }
@@ -165,10 +182,11 @@ div.data-container {
     padding: var(--padding);
 }
 
-a.browse-full-template{
-    color:var(--color7);
+a.browse-full-template {
+    color: var(--color7);
     cursor: pointer;
 }
+
 /*nav aside*/
 div.boards-containter,
 div.templates-containter,
@@ -181,9 +199,37 @@ div.members-containter,
 div.settings-containter {
     display: flex;
 }
+
 /*Your boards*/
-div.your-boards-container{
+div.your-boards-container {
     display: flex;
 }
 
+div.project-managemnet-container {
+    background-image: url(home-page-imgs/project-management-cover.jpg);
+}
+
+div.kaban-template-containter {
+    background-image: url(home-page-imgs/kanban-template-cover.jpg);
+}
+
+div.simple-project-board-container {
+    background-image: url(home-page-imgs/simple-project-board.jpg);
+}
+
+div.remote-team-hub-container {
+    background-image: url(home-page-imgs/remote-team-hub-cover.jpg);
+}
+
+div.simple-project-board-container,
+div.project-managemnet-container,
+div.remote-team-hub-container,
+div.kaban-template-containter {
+    background-size: cover;
+}
+
 /*Mobile-first*/
+
+/* @media screen and (min-width:) { */
+
+/* } */
